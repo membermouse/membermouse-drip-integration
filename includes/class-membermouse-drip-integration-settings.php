@@ -307,7 +307,7 @@ textarea, input, select {
 							href="https://www.getdrip.com/<?php echo $dripAccountId; ?>/rules"
 							target="_blank">rule</a> and choose MemberMouse as the provider.
 							Then, select the specific event that you would like to trigger an
-							action in Drip.</li>
+							action in Drip. Check out our <a href="https://support.membermouse.com/a/solutions/articles/9000195532" target="_blank">step-by-step guide on creating automations</a>.</li>
 					</ol>
 				</div>
 
