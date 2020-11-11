@@ -13,4 +13,5 @@ if ( ! defined( 'WP_UNINSTALL_PLUGIN' ) ) {
 	exit;
 }
 
-// Do something here if plugin is being uninstalled.
+// clear the Drip Account ID from the database when plugin is deleted
+update_option("mm-drip-account-id", "");
