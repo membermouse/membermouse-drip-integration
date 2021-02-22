@@ -70,7 +70,7 @@ class MemberMouse_Drip_Integration_Settings
             'add_menu_item'
         ));
 
-        add_action('admin_init', array(
+        add_action('init', array(
             $this,
             'register_settings'
         ));
@@ -115,7 +115,7 @@ class MemberMouse_Drip_Integration_Settings
         // Setup push notifications if Drip integration is active
         $dripAccountId = get_option("mm-drip-account-id", false);
 
-        if (function_exists("is_plugin_active") && is_plugin_active("membermouse/index.php") && ! empty($dripAccountId) && is_numeric($dripAccountId)) {
+        if (!empty($dripAccountId) && is_numeric($dripAccountId)) {
             add_action("mm_member_add", array(
                 $this,
                 'memberAdded'
@@ -409,7 +409,7 @@ textarea, input, select {
     {
         $dripAccountId = get_option("mm-drip-account-id", false);
         $url = "https://api.getdrip.com/" . $dripAccountId . "/push/membermouse";
-
+        
         if (! empty($url)) {
             $postvars = "event_type={$eventType}&";
             $postvars .= $this->arrayToQuerystring($params);
